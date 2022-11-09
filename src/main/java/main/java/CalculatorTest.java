@@ -1,3 +1,5 @@
+package main.java;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -9,7 +11,7 @@ class CalculatorTest {
         int a=2;
         int b=67;
         int result=69;
-        assertEquals(new Calculator().summ(a,b),result);
+        assertEquals(new main.java.Calculator().summ(a,b),result);
     }
 
     @org.junit.jupiter.api.Test
@@ -18,7 +20,7 @@ class CalculatorTest {
         int a=2;
         int b=67;
         int result=69;
-        assertEquals(new Calculator().summ(a,b),result);
+        assertEquals(new main.java.Calculator().summ(a,b),result);
     }
 
     @org.junit.jupiter.api.Test
@@ -26,7 +28,7 @@ class CalculatorTest {
         int a=20;
         int b=20;
         int result=400;
-        assertEquals(new Calculator().mult(a,b),result);
+        assertEquals(new main.java.Calculator().mult(a,b),result);
     }
 
     @org.junit.jupiter.api.Test
@@ -35,6 +37,6 @@ class CalculatorTest {
         int a=30;
         int b=15;
         int result=2;
-        assertEquals(new Calculator().divide(a,b),result);
+        assertEquals(new main.java.Calculator().divide(a,b),result);
     }
 }
