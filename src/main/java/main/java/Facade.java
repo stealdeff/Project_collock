@@ -6,6 +6,8 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import java.io.IOException;
 import java.util.Scanner;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 public class Facade
 {
 
@@ -14,7 +16,7 @@ public class Facade
 
 
         public Object summ(double num1, double num2) throws IOException {
-            main.java.HttpUriRequest request = new main.java.HttpGet( BaseUrl + "add/" + num1 + "/" + num2);
+            main.java.HttpUriRequest request = new HttpGet( BaseUrl + "add/" + num1 + "/" + num2);
             var httpResponse = HttpClientBuilder.create().build().execute((org.apache.http.client.methods.HttpUriRequest) request);
             var result = objectMapper.readValue(httpResponse.getEntity().getContent(), Double.class);
             return result;
@@ -40,4 +42,26 @@ public class Facade
             var result = objectMapper.readValue(httpResponse.getEntity().getContent(), Double.class);
             return result;
         }
+
+    public String fake()
+    {
+        Scanner cin=new Scanner(System.in);
+        String k;
+        k=cin.next();
+        if(k =="*" || k =="+" || k=="-" || k=="/")
+        {
+            assertEquals(new Facade().fake());
+        }
+        return "ok";
     }
+
+    private void assertEquals(String fake)
+    {
+    }
+
+    private class HttpGet extends HttpUriRequest {
+        public HttpGet(String s) {
+            super();
+        }
+    }
+}
